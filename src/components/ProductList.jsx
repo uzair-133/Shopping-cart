@@ -1,19 +1,41 @@
-import React from 'react'
+import ProductCard from "./ProductCard"
+
+
+
+const Products = [
+    {
+        id: 1,
+        name: "laptop",
+        price: "800"
+    },
+    {
+        id: 2,
+        name: "mobile",
+        price: "600"
+    },
+    {
+        id: 3,
+        name: "heagphone",
+        price: "300"
+    },
+    {
+        id: 4,
+        name: "keyboard",
+        price: "400"
+    }
+]
 
 const ProductList = () => {
     return (
         <>
 
             <div className="row">
-                <div className="col-md-3 mb-4">
-                    <div className="card shadow-sm h-100 text-center">
-                        <div className="card-body">
-                            <h5 className="card-title">Laptop</h5>
-                            <p className="card-text">$800</p>
-                            <button className="btn btn-primary">Add to Cart</button>
-                        </div>
+                {Products.map((p) => (
+                    <div key={p.id} className="col-md-3 mb-4">
+                        <ProductCard product={p}/>
                     </div>
-                </div>
+                ))}
+
             </div>
 
         </>

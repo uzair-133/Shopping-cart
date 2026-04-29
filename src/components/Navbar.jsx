@@ -1,7 +1,7 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { useCart } from '../context/CartContext'
 const Navbar = () => {
+    const {cart} = useCart()
     return (
         <>
 
@@ -10,7 +10,7 @@ const Navbar = () => {
                     <Link className="navbar-brand fw-bold" to="/">🛒 MyShop</Link>
                     <div>
                         <Link className="nav-link d-inline me-3 text-white" to="/">Home</Link>
-                        <Link className="nav-link d-inline text-white" to="/cart">Cart (2)</Link>
+                        <Link className="nav-link d-inline text-white" to="/cart">Cart ({cart.length})</Link>
                     </div>
                 </div>
             </nav>
